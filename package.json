@@ -1,5 +1,5 @@
 {
-  "name": "wheatherjs",
+  "name": "weatherjs",
   "version": "0.0.1",
   "description": "get the wheather from openweathermap.org",
   "main": "index.js",
