@@ -1,7 +1,7 @@
 {
   "name": "weatherjs",
   "version": "0.0.1",
-  "description": "get the wheather from openweathermap.org",
+  "description": "get the weather from openweathermap.org",
   "main": "index.js",
   "scripts": {
     "test": "make test"
