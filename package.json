@@ -1,6 +1,6 @@
 {
   "name": "weatherjs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "get the weather from openweathermap.org",
   "main": "index.js",
   "scripts": {
@@ -19,5 +19,8 @@
   "devDependencies": {
     "chai": "^1.10.0",
     "mocha": "^2.1.0"
+  },
+  "dependencies": {
+    "promise": "^6.0.1"
   }
 }
