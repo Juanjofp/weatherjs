@@ -32,8 +32,14 @@ module.exports.weather = function(lat, lng, error, success){
         var result = {
           name: info.name,
           position: info.coord,
-          temp: info.main,
-          wind: info.wind
+          temp: {
+            current: info.main.temp,
+            max: info.main.temp_max,
+            min: info.main.temp_min
+          },
+          wind: info.wind,
+          pressure: info.main.pressure,
+          humidity: info.main.humidity
         };
         success(result);
       }catch(ex){
@@ -72,8 +78,14 @@ module.exports.weatherPromise = function(lat, lng){
           var result = {
             name: info.name,
             position: info.coord,
-            temp: info.main,
-            wind: info.wind
+            temp: {
+              current: info.main.temp,
+              max: info.main.temp_max,
+              min: info.main.temp_min
+            },
+            wind: info.wind,
+            pressure: info.main.pressure,
+            humidity: info.main.humidity
           };
           fulfill(result);
         }catch(ex){

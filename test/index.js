@@ -11,6 +11,8 @@ describe('Module Weather', function(){
       expect(data).to.include.keys('position');
       expect(data).to.include.keys('temp');
       expect(data).to.include.keys('wind');
+      expect(data).to.include.keys('pressure');
+      expect(data).to.include.keys('humidity');
     });
   });
 
@@ -21,6 +23,8 @@ describe('Module Weather', function(){
       expect(data).to.include.keys('position');
       expect(data).to.include.keys('temp');
       expect(data).to.include.keys('wind');
+      expect(data).to.include.keys('pressure');
+      expect(data).to.include.keys('humidity');
     });
   });
 });
