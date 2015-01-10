@@ -24,7 +24,7 @@ module.exports.weather = function(lat, lng, error, success){
 
     //the whole response has been recieved, so we just print it out here
     response.on('end', function () {
-      console.log(str);
+      //console.log(str);
       // Process response
       try{
         var data = JSON.parse(str);
@@ -70,7 +70,7 @@ module.exports.weatherPromise = function(lat, lng){
 
       //the whole response has been recieved, so we just print it out here
       response.on('end', function () {
-        console.log(str);
+        //console.log(str);
         // Process response
         try{
           var data = JSON.parse(str);
