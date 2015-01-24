@@ -5,7 +5,8 @@ var expect = require('chai').expect,
 describe('Module Weather', function(){
 
   it('get info from coords', function(){
-    weather(38.032024, -1.124372, function(data){
+    weather.init(38.032024, -1.124372);
+    weather.query(function(data){
       expect(data).to.be.an('object');
       expect(data).to.include.keys('name');
       expect(data).to.include.keys('position');
