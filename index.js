@@ -39,7 +39,7 @@ module.exports.weather = (function() {
           name: info.name,
           ts: Date.now(),
           position: info.coord,
-          temp: {
+          temperature: {
             current: info.main.temp,
             max: info.main.temp_max,
             min: info.main.temp_min
@@ -137,7 +137,7 @@ module.exports.weatherPromise = function(lat, lng){
             name: info.name,
             ts: Date.now(),
             position: info.coord,
-            temp: {
+            temperature: {
               current: info.main.temp,
               max: info.main.temp_max,
               min: info.main.temp_min
