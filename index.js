@@ -7,7 +7,7 @@ var http = require('http');
 var sys = require('sys');
 var events = require('events');
 
-module.exports.weather = (function() {
+module.exports.weather = (function weather() {
 
   var Weather = Object.create(events.EventEmitter.prototype);
 
@@ -24,12 +24,12 @@ module.exports.weather = (function() {
     var str = '';
 
     //another chunk of data has been recieved, so append it to `str`
-    response.on('data', function (chunk) {
+    response.on('data', function responsedata(chunk) {
       str += chunk;
     });
 
     //the whole response has been recieved, so we just print it out here
-    response.on('end', function () {
+    response.on('end', function responseend() {
       //console.log(str);
       // Process response
       try{
@@ -58,7 +58,7 @@ module.exports.weather = (function() {
 
   function runQuery() {
     var req = http.request(this.options, callback.bind(this));
-    req.on('error', function(e){
+    req.on('error', function reqerror(e){
       console.log('Error weather', e);
       this.error(e);
     }.bind(this));
@@ -101,7 +101,7 @@ module.exports.weather = (function() {
     this.removeAllListeners('close');
   };
 
-  Weather.isRunning = function () {
+  Weather.isRunning = function isRunning() {
     return this.__isRunning__ || false;
   };
 
@@ -115,19 +115,19 @@ module.exports.weatherPromise = function(lat, lng){
     path: '/data/2.5/find?cnt=1&units=metric',
   };
 
-  return new Promisenode(function(fulfill, reject){
+  return new Promisenode(function promise_node(fulfill, reject){
     options.path = options.path + '&lat='+lat+'&lon='+lng;
 
     var callback = function(response){
       var str = '';
 
       //another chunk of data has been recieved, so append it to `str`
-      response.on('data', function (chunk) {
+      response.on('data', function responsedata(chunk) {
         str += chunk;
       });
 
       //the whole response has been recieved, so we just print it out here
-      response.on('end', function () {
+      response.on('end', function responseend() {
         //console.log(str);
         // Process response
         try{
@@ -154,7 +154,7 @@ module.exports.weatherPromise = function(lat, lng){
       });
     };
     var req = http.request(options, callback);
-    req.on('error', function(e){
+    req.on('error', function reqerror(e){
       console.log('Error weather', e);
       reject(e);
     });
