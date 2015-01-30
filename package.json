@@ -1,6 +1,6 @@
 {
   "name": "weatherjs",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "get the weather from openweathermap.org",
   "main": "index.js",
   "scripts": {
